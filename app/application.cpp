@@ -41,15 +41,14 @@ existing_client:
     static mavlink_message_t udp_in_msg;
     static mavlink_status_t  udp_in_status;
     static uint8_t buffer[512];
-
     //try to decode incoming message 
-    for (int i = i; i < size; i++) {
+    for (int i = 0; i < size; i++) {
         if (mavlink_parse_char(MAVLINK_COMM_0, (uint8_t)data[i], &udp_in_msg, &udp_in_status)) {
             debugf("UDP > : %d\n", udp_in_msg.msgid);
             //message decoded, send via serial
             uint16_t len = mavlink_msg_to_send_buffer(buffer, &udp_in_msg);
             if (len > 0) {
-                //really inefficient but usable
+                //really inefficient but should do the trick
                 for (uint16_t j=0; j < len; j++) 
                     Serial.write(buffer[j]);
             }
@@ -74,17 +73,17 @@ void timer_interrupt() {
     while (Serial.available() > 0) {
         if (mavlink_parse_char(MAVLINK_COMM_0, (uint8_t)Serial.read(), &msg, &status)) {
             //mavlink packet received from UART
-            debugf("UART > : %d\n", msg.msgid);
+            debugf("UART > : %d\n", msg.msgid, msg.len);
 
             uint16_t len = mavlink_msg_to_send_buffer(buffer, &msg);
             if (msg.msgid == 0) {
-                //heartbeat messages are broadcast
+                //heartbeat messages are also broadcast
                 udp.sendTo(IPAddress(192, 168, 13, 255), 14550, (const char*)buffer, len);
-            } else {
-                //forward other packets to connected clients
-                for (uint8_t i=0; i < num_clients; i++)
-                    udp.sendTo(client_list[i], 14550, (const char*)buffer, len);
-            }
+            } 
+
+            //forward other packets to connected clients
+            for (uint8_t i=0; i < num_clients; i++)
+                udp.sendTo(client_list[i], 14550, (const char*)buffer, len);
 
         }
     }
@@ -95,8 +94,7 @@ Timer uart_recv_timer;
 void init()
 {
 	Serial.begin(921600);
-	Serial.systemDebugOutput(true); // Allow debug print to serial
-	Serial.println("Sming. Let's do smart things!");
+	Serial.systemDebugOutput(false); // Allow debug print to serial
 	// Set system ready callback method
 	System.onReady(ready);
 
