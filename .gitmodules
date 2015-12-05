@@ -1,3 +1,3 @@
 [submodule "mavlink"]
-	path = mavlink
+	path = firmware/mavlink
 	url = https://github.com/mavlink/mavlink.git
