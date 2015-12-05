@@ -27,4 +27,4 @@ MODULES = app
 # COM_PORT = /dev/tty.usbserial
 
 # Com port speed
-COM_SPEED	= 460800
+COM_SPEED	= 115200
