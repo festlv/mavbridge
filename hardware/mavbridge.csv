@@ -1,0 +1,24 @@
+Reference, Value, Footprint, Datasheet, MFN, MFP, Description, S1PN, S1PL, Package ID, Characteristics
+U1,ESP-12E,ESP8266:ESP-12E,https://www.adafruit.com/images/product-files/2471/0A-ESP8266__Datasheet__EN_v4.3.pdf,Espressif,ESP-12,Aliexpress/ebay,,,,
+R7,120R,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD07120RL,,603-RT0603DRD07120RL,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD07120RL/,0603,
+C2,0.1uF,Capacitors_SMD:C_0603,http://www.mouser.com/ds/2/281/c02e-2905.pdf,Murata,GRM188R71H104KA93D,,81-GRM39X104K50D,http://eu.mouser.com/ProductDetail/Murata-Electronics/GRM188R71H104KA93D/,0603,50V, 0.1uF X7R
+R9,10K,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD074K7L,4.7kOhm,603-RT0603DRD074K7L,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD074K7L/,0603,
+C3,22uF,Capacitors_SMD:C_0805,http://www.mouser.com/ds/2/281/c02e-2905.pdf,Murata,GRM21BR60J226ME39L,,81-GRM21R60J226ME39L,http://eu.mouser.com/ProductDetail/Murata-Electronics/GRM21BR60J226ME39L,0805,6.3V X5R 20% 
+D3,UART,LEDs:LED-0603,http://www.mouser.com/ds/2/216/APT1608EC-34957.pdf,Kingbright,APT1608EC,,604-APT1608EC,http://eu.mouser.com/ProductDetail/Kingbright/APT1608EC,0603,Red 0603 LED
+P1,PX4,DF13:DF13-6,http://www.mouser.com/ds/2/185/en_DF13_20130411-268487.pdf,Hirose Connector,DF13A-6P-1.25H(20),DF13 series,798-DF13A6P125H20,http://eu.mouser.com/ProductDetail/Hirose-Connector/DF13A-6P-125H20/,,
+F1,F_Small,Resistors_SMD:R_1206,http://www.mouser.com/ds/2/87/Bus_Elx_DS_4397_PTS1206_Series-479599.pdf,Bussmann / Eaton,PTS120616V035,,504-PTS120616V035,http://eu.mouser.com/ProductDetail/Bussmann-Eaton/PTS120616V035,1206,0.35A hold current, 0.5A trip current, 16V
+D6,D_Schottky,Diodes_SMD:SOD-323,http://www.mouser.com/ds/2/308/NSR0530H-D-775571.pdf,ON semiconductor,NSR0530HT1G,,863-NSR0530HT1G,http://eu.mouser.com/ProductDetail/ON-Semiconductor/NSR0530HT1G,SOD-323-2,0.5A, 30V
+P2,DEBUG,Pin_Headers:Pin_Header_Straight_1x06,
+P3,PWR,Pin_Headers:Pin_Header_Straight_1x02,
+C4,22uF,Capacitors_SMD:C_0805,http://www.mouser.com/ds/2/281/c02e-2905.pdf,Murata,GRM21BR60J226ME39L,,81-GRM21R60J226ME39L,http://eu.mouser.com/ProductDetail/Murata-Electronics/GRM21BR60J226ME39L,0805,6.3V X5R 20% 
+R6,10K,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD074K7L,4.7kOhm,603-RT0603DRD074K7L,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD074K7L/,0603,
+R5,10K,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD074K7L,4.7kOhm,603-RT0603DRD074K7L,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD074K7L/,0603,
+R3,10K,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD074K7L,4.7kOhm,603-RT0603DRD074K7L,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD074K7L/,0603,
+R2,10K,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD074K7L,4.7kOhm,603-RT0603DRD074K7L,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD074K7L/,0603,
+R8,120R,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD07120RL,,603-RT0603DRD07120RL,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD07120RL/,0603,
+R1,120R,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD07120RL,,603-RT0603DRD07120RL,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD07120RL/,0603,
+R4,120R,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD07120RL,,603-RT0603DRD07120RL,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD07120RL/,0603,
+C1,0.1uF,Capacitors_SMD:C_0603,http://www.mouser.com/ds/2/281/c02e-2905.pdf,Murata,GRM188R71H104KA93D,,81-GRM39X104K50D,http://eu.mouser.com/ProductDetail/Murata-Electronics/GRM188R71H104KA93D/,0603,50V, 0.1uF X7R
+D4,NET,LEDs:LED-0603,http://www.mouser.com/ds/2/216/APT1608EC-34957.pdf,Kingbright,AP1608SGC,,604-AP1608SGC,http://eu.mouser.com/ProductDetail/Kingbright/APT1608EC,0603,Green 0603 LED
+D1,BAT54TW,sot363:SOT-363,http://www.mouser.com/ds/2/115/ds30152-61195.pdf,Diodes Inc.,BAT54TW-7-F,,621-BAT54TW-F,http://eu.mouser.com/ProductDetail/Diodes-Incorporated/BAT54TW-7-F/,SOT-363,0.2Vf @ small current
+U2,AP7361,TO_SOT_Packages_SMD:SOT-223,

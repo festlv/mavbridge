@@ -1,3 +1,6 @@
 [submodule "mavlink"]
 	path = firmware/mavlink
 	url = https://github.com/mavlink/mavlink.git
+[submodule "hardware/libraries/kicad-ESP8266"]
+	path = hardware/libraries/kicad-ESP8266
+	url = https://github.com/jdunmire/kicad-ESP8266.git

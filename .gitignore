@@ -1,3 +1,6 @@
 firmware/mav.*
 firmware/out/*
 firmware/tags
+hardware/_autosave*
+*-bak
+*-cache.lib

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP7361
+D Fixed/Adjustable 1A Low Dropout regulator, Positive
+K REGULATOR LDO 1.5V 1.8V 2.5V 3.3V 5V
+F http://www.diodes.com/datasheets/AP1117.pdf
+$ENDCMP
+#
+#End Doc Library
