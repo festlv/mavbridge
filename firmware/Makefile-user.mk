@@ -27,6 +27,6 @@ MODULES = app
 # COM_PORT = /dev/tty.usbserial
 
 # Com port speed
-COM_SPEED	= 115200
+COM_SPEED	= 921600
 
 SPIFF_FILES = web/build

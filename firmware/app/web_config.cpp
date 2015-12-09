@@ -45,8 +45,7 @@ void onIpConfig(HttpRequest &request, HttpResponse &response)
 	{
 		vars["ip"] = WifiStation.getIP().toString();
 		vars["netmask"] = WifiStation.getNetworkMask().toString();
-		vars["gateway"] = WifiStation.getNetworkGateway().toString();
-	}
+		vars["gateway"] = WifiStation.getNetworkGateway().toString(); }
 	else
 	{
 		vars["ip"] = "192.168.1.77";
@@ -219,7 +218,8 @@ void webserver_init()
 
 	// Start AP for configuration
 	WifiAccessPoint.enable(true);
-	WifiAccessPoint.config("Sming Configuration", "", AUTH_OPEN);
+    
+	WifiAccessPoint.config("MAVBridge-" + WifiAccessPoint.getMAC(), "", AUTH_OPEN);
 
 	// Run WEB server on system ready
 	System.onReady(startServers);

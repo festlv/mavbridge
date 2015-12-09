@@ -53,7 +53,7 @@ struct ApplicationSettingsStorage
 			netmask = network["netmask"].asString();
 			gateway = network["gateway"].asString();
 
-            JsonObject& mavbridge = root["bridge"];
+            JsonObject& mavbridge = root["mavbridge"];
             baud_rate = mavbridge["baud_rate"];
             mav_port_in = mavbridge["mav_port_in"];
             mav_port_out = mavbridge["mav_port_out"];
@@ -82,6 +82,7 @@ struct ApplicationSettingsStorage
 
 
         JsonObject& mavbridge = jsonBuffer.createObject();
+        root["mavbridge"] = mavbridge;
         mavbridge["baud_rate"] = baud_rate;
         mavbridge["ota_link"] = ota_link.c_str();
         mavbridge["mav_port_in"] = mav_port_in;
