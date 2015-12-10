@@ -9,7 +9,7 @@
 
 #define DEFAULT_MAVLINK_PORT 14550
 #define DEFAULT_OTA_LINK "http://imprimus.lv/mavbridge/fw/rev1/"
-#define DEFAULT_MAVLINK_BAUDRATE 57600
+#define DEFAULT_MAVLINK_BAUDRATE 115200
 
 struct ApplicationSettingsStorage
 {
@@ -97,6 +97,6 @@ struct ApplicationSettingsStorage
 	bool exist() { return fileExist(APP_SETTINGS_FILE); }
 };
 
-static ApplicationSettingsStorage AppSettings;
+extern ApplicationSettingsStorage AppSettings;
 
 #endif /* INCLUDE_APPSETTINGS_H_ */

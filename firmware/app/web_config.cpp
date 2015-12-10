@@ -45,14 +45,15 @@ void onIpConfig(HttpRequest &request, HttpResponse &response)
 	{
 		vars["ip"] = WifiStation.getIP().toString();
 		vars["netmask"] = WifiStation.getNetworkMask().toString();
-		vars["gateway"] = WifiStation.getNetworkGateway().toString(); }
+		vars["gateway"] = WifiStation.getNetworkGateway().toString(); 
+    }
 	else
 	{
 		vars["ip"] = "192.168.1.77";
 		vars["netmask"] = "255.255.255.0";
 		vars["gateway"] = "192.168.1.1";
 	}
-    
+    debugf("baud_rate: %d\n", AppSettings.baud_rate); 
     vars["baud_rate"] = AppSettings.baud_rate;
     vars["ota_link"] = AppSettings.ota_link;
     vars["mav_port_in"] = AppSettings.mav_port_in;
@@ -201,10 +202,6 @@ void networkScanCompleted(bool succeeded, BssList list)
 
 void webserver_init()
 {
-	spiffs_mount(); // Mount file system, in order to work with files
-
-	AppSettings.load();
-
 	WifiStation.enable(true);
 
 	if (AppSettings.exist())

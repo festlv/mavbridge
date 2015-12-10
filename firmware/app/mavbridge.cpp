@@ -1,25 +1,31 @@
 #include <user_config.h>
 #include <SmingCore/SmingCore.h>
 
+#include "AppSettings.h"
 
 #include "mavlink/ardupilotmega/mavlink.h"
 
 #define MAX_CLIENTS 5
+#define MAX_INTERFACES 2
 
 #define LED_PIN 13
 
 IPAddress client_list[MAX_CLIENTS];
-static uint8_t num_clients=0;
 
+IPAddress interface_ips[MAX_INTERFACES];
+static uint8_t num_interfaces=0;
+static uint8_t num_clients=0;
 
 void udp_receive_callback(UdpConnection& connection, char *data, int size, 
         IPAddress remoteIP, uint16_t remotePort);
 // UDP server
-const uint16_t listen_port = 14550;
 UdpConnection udp(udp_receive_callback);
 
 void timer_interrupt();
 Timer uart_recv_timer;
+
+void interface_update_interrupt();
+Timer interface_update_timer;
 
 
 // Will be called when WiFi hardware and software initialization was finished
@@ -33,13 +39,45 @@ void ready()
 
     uart_recv_timer.initializeMs(10, timer_interrupt).start();
 
-    udp.listen(listen_port);
+    interface_update_timer.initializeMs(1000, interface_update_interrupt).start();
 
+    udp.listen(AppSettings.mav_port_in);
+}
+
+
+void interface_update_interrupt(void) {
+
+    //update interface_ips with IP addresses of currently active interfaces
+    if (WifiAccessPoint.isEnabled()) {
+        for (uint8_t i=0; i < MAX_INTERFACES; i++) {
+            if (interface_ips[i] == WifiAccessPoint.getIP())
+                goto update_station;
+        }
+        interface_ips[num_interfaces] = WifiAccessPoint.getIP();
+        num_interfaces++;
+    }
+    //update station IP address if connected
+update_station:
+    if (WifiStation.isEnabled() && WifiStation.isConnected()) {
+        for (uint8_t i=0; i < MAX_INTERFACES; i++) {
+            if (interface_ips[i] == WifiStation.getIP())
+                goto update_clients;
+        }
+        interface_ips[num_interfaces] = WifiStation.getIP();
+        num_interfaces++;
+    }
+update_clients:
+	//@TODO: Clean the client_list from clients which have not
+    //sent a heartbeat during last XX seconds
+
+//    debugf("num_interfaces: %d\n, num_clients: %d\n", num_interfaces, num_clients);
+    return;
 }
 
 static mavlink_message_t udp_in_msg;
 static mavlink_status_t  udp_in_status;
 static uint8_t udp_buffer[512];
+
 
 
 void udp_receive_callback(UdpConnection& connection, char *data, int size, 
@@ -91,11 +129,20 @@ void timer_interrupt() {
             if (len > 0) {
                 if (msg.msgid == 0) {
                     //heartbeat messages are also broadcast
-                    udp.sendTo(IPAddress(192, 168, 13, 255), 14550, (const char*)out_buffer, len);
+                    for (uint8_t interface = 0; interface < num_interfaces; interface++) {
+
+                        udp.sendTo(
+                                IPAddress(
+                                    interface_ips[interface][0], 
+                                    interface_ips[interface][1], 
+                                    interface_ips[interface][2], 
+                                    255
+                                    ), AppSettings.mav_port_out, (const char*)out_buffer, len);
+                    }
                 } 
                 //forward other packets to connected clients
                 for (uint8_t i=0; i < num_clients; i++)
-                    udp.sendTo(client_list[i], 14550, (const char*)out_buffer, len);
+                    udp.sendTo(client_list[i], AppSettings.mav_port_out, (const char*)out_buffer, len);
             }
             digitalWrite(LED_PIN, 1);
         }
