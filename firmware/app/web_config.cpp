@@ -202,6 +202,12 @@ void networkScanCompleted(bool succeeded, BssList list)
 
 void webserver_init()
 {
+
+	// Start AP for configuration
+	WifiAccessPoint.enable(true);
+	WifiAccessPoint.config("MAVBridge-" + WifiAccessPoint.getMAC(), "", AUTH_OPEN);
+
+
 	WifiStation.enable(true);
 
 	if (AppSettings.exist())
@@ -213,11 +219,10 @@ void webserver_init()
 
 	WifiStation.startScan(networkScanCompleted);
 
-	// Start AP for configuration
-	WifiAccessPoint.enable(true);
     
-	WifiAccessPoint.config("MAVBridge-" + WifiAccessPoint.getMAC(), "", AUTH_OPEN);
 
 	// Run WEB server on system ready
 	System.onReady(startServers);
 }
+
+
