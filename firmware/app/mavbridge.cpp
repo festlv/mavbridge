@@ -16,6 +16,9 @@ IPAddress interface_ips[MAX_INTERFACES];
 static uint8_t num_interfaces=0;
 static uint8_t num_clients=0;
 
+static uint32_t uart_pkts_rcvd = 0;
+static uint32_t net_pkts_rcvd = 0;
+
 void udp_receive_callback(UdpConnection& connection, char *data, int size, 
         IPAddress remoteIP, uint16_t remotePort);
 // UDP server
@@ -97,6 +100,7 @@ existing_client:
     //try to decode incoming message 
     for (int i = 0; i < size; i++) {
         if (mavlink_parse_char(MAVLINK_COMM_0, (uint8_t)data[i], &udp_in_msg, &udp_in_status)) {
+            net_pkts_rcvd++;
             debugf("UDP > : %d\n", udp_in_msg.msgid);
             //message decoded, send via serial
             uint16_t len = mavlink_msg_to_send_buffer(udp_buffer, &udp_in_msg);
@@ -127,6 +131,7 @@ void timer_interrupt() {
 
             uint16_t len = mavlink_msg_to_send_buffer(out_buffer, &msg);
             if (len > 0) {
+                uart_pkts_rcvd++;
                 if (msg.msgid == 0) {
                     //heartbeat messages are also broadcast
                     for (uint8_t interface = 0; interface < num_interfaces; interface++) {
@@ -147,6 +152,11 @@ void timer_interrupt() {
             digitalWrite(LED_PIN, 1);
         }
     }
+}
+
+void mavbridge_get_status(uint32_t &uart_packets_received, uint32_t &net_packets_received) {
+    uart_packets_received = uart_pkts_rcvd;
+    net_packets_received = net_pkts_rcvd;
 }
 
 void mavbridge_init() 

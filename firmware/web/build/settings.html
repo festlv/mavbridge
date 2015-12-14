@@ -22,30 +22,6 @@
     <![endif]-->
 </head>
 <script>
-    $(document).ready(function () {
-        ToggleReadonly($('input[checked=checked]').val());
-        $('input[name=dhcp]').on('click', function(){
-            $('input[name=dhcp]').each(function(e){
-                $(e).removeAttr('checked');
-            })
-            $(this).attr('checked', 'checked');
-            ToggleReadonly($(this).val());
-        })
-    });
-
-    function ToggleReadonly(value){
-        if(value == '1'){
-            $('.ip-setting').each(function(){
-                $(this).attr('readonly', 'readonly');
-            })
-        }
-        else
-        {
-            $('.ip-setting').each(function(){
-                $(this).removeAttr('readonly');
-            })
-        }
-    }
 </script>
 
 <body>
@@ -54,8 +30,9 @@
     <div class="header">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <li role="presentation"><a href="/">Networks</a></li>
-                <li role="presentation" class="active"><a href="/ipconfig">Settings</a></li>
+                <li role="presentation"><a href="/">Status</a></li>
+                <li role="presentation" class="active"><a href="/settings">Settings</a></li>
+                <li role="presentation"><a href="/networks">Network</a></li>
             </ul>
         </nav>
         <h3 class="text-muted">MAVBridge</h3>
@@ -85,35 +62,7 @@
                 </fieldset>
 
 
-                <fieldset>
-                    <legend>IP Address</legend>
-                    <div class="col-md-offset-2">
-                        <div class="form-group">
-                            <label>Use DHCP</label>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="radio" value="1" name="dhcp" {dhcpon}> Yes
-                                </label>
-                                <label>
-                                    <input type="radio" value="0" name="dhcp" {dhcpoff}> No
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>IP Address</label>
-                            <input class="form-control ip-setting" style="width: 250px" type="text" name="ip" value="{ip}">
-                        </div>
-                        <div class="form-group">
-                            <label>Network Mask</label>
-                            <input class="form-control ip-setting" style="width: 250px" type="text" name="netmask" value="{netmask}">
-                        </div>
-                        <div class="form-group">
-                            <label>Gateway</label>
-                            <input class="form-control ip-setting" style="width: 250px" type="text" name="gateway" value="{gateway}">
-                        </div>
-                    </div>
-                </fieldset>
-
+                
                 <legend>Firmware settings</legend>
                     <div class="col-md-offset-2">
                         <div class="form-group">
