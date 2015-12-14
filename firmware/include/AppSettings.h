@@ -8,7 +8,7 @@
 #define APP_SETTINGS_FILE ".settings.conf" // leading point for security reasons :)
 
 #define DEFAULT_MAVLINK_PORT 14550
-#define DEFAULT_OTA_LINK "http://imprimus.lv/mavbridge/fw/rev1/"
+#define DEFAULT_OTA_LINK FW_UPDATE_LINK
 #define DEFAULT_MAVLINK_BAUDRATE 115200
 
 struct ApplicationSettingsStorage

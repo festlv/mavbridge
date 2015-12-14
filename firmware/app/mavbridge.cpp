@@ -153,7 +153,7 @@ void mavbridge_init()
 {
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN, 0);
-    delay(1000);
+    delay(500);
     digitalWrite(LED_PIN, 1);
 
 	// Set system ready callback method
