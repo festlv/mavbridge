@@ -21,4 +21,4 @@ R4,120R,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoH
 C1,0.1uF,Capacitors_SMD:C_0603,http://www.mouser.com/ds/2/281/c02e-2905.pdf,Murata,GRM188R71H104KA93D,,81-GRM39X104K50D,http://eu.mouser.com/ProductDetail/Murata-Electronics/GRM188R71H104KA93D/,0603,50V, 0.1uF X7R
 D4,NET,LEDs:LED-0603,http://www.mouser.com/ds/2/216/APT1608EC-34957.pdf,Kingbright,AP1608SGC,,604-AP1608SGC,http://eu.mouser.com/ProductDetail/Kingbright/APT1608EC,0603,Green 0603 LED
 D1,BAT54TW,sot363:SOT-363,http://www.mouser.com/ds/2/115/ds30152-61195.pdf,Diodes Inc.,BAT54TW-7-F,,621-BAT54TW-F,http://eu.mouser.com/ProductDetail/Diodes-Incorporated/BAT54TW-7-F/,SOT-363,0.2Vf @ small current
-U2,AP7361,TO_SOT_Packages_SMD:SOT-223,
+U2,AP7361,TO_SOT_Packages_SMD:SOT-223,http://www.mouser.com/ds/2/115/AP7361C-775034.pdf,Diodes Incorporated,AP7361C-33E-13,,621-AP7361C-33E-13,http://eu.mouser.com/Search/ProductDetail.aspx?R=AP7361C-33E-13virtualkey62110000virtualkey621-AP7361C-33E-13,SOT-223-3,

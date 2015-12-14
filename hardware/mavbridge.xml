@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/home/reinis/projects/ee/esp-mavlink-bridge/hardware/mavbridge.sch</source>
-    <date>Sun 06 Dec 2015 01:00:02 AM EET</date>
+    <date>Tue 08 Dec 2015 09:46:49 PM EET</date>
     <tool>Eeschema (2015-11-11 BZR 6309, Git 34f1c0e)-product</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -348,6 +348,14 @@
     <comp ref="U2">
       <value>AP7361</value>
       <footprint>TO_SOT_Packages_SMD:SOT-223</footprint>
+      <datasheet>http://www.mouser.com/ds/2/115/AP7361C-775034.pdf</datasheet>
+      <fields>
+        <field name="MFN">Diodes Incorporated</field>
+        <field name="MFP">AP7361C-33E-13</field>
+        <field name="S1PN">621-AP7361C-33E-13</field>
+        <field name="S1PL">http://eu.mouser.com/Search/ProductDetail.aspx?R=AP7361C-33E-13virtualkey62110000virtualkey621-AP7361C-33E-13</field>
+        <field name="Package ID">SOT-223-3</field>
+      </fields>
       <libsource lib="ap7361" part="AP7361"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5663C3FE</tstamp>
@@ -553,11 +561,11 @@
     </libpart>
   </libparts>
   <libraries>
+    <library logical="device">
+      <uri>/usr/share/kicad/library/device.lib</uri>
+    </library>
     <library logical="conn">
       <uri>/usr/share/kicad/library/conn.lib</uri>
-    </library>
-    <library logical="ap7361">
-      <uri>/home/reinis/projects/ee/esp-mavlink-bridge/hardware/libraries/ap7361.lib</uri>
     </library>
     <library logical="ESP8266">
       <uri>/home/reinis/projects/ee/esp-mavlink-bridge/hardware/libraries/kicad-ESP8266/ESP8266.lib</uri>
@@ -565,8 +573,8 @@
     <library logical="bat54tw">
       <uri>/home/reinis/projects/ee/esp-mavlink-bridge/hardware/libraries/bat54tw.lib</uri>
     </library>
-    <library logical="device">
-      <uri>/usr/share/kicad/library/device.lib</uri>
+    <library logical="ap7361">
+      <uri>/home/reinis/projects/ee/esp-mavlink-bridge/hardware/libraries/ap7361.lib</uri>
     </library>
   </libraries>
   <nets>
