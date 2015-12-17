@@ -19,6 +19,7 @@ void onSettings(HttpRequest &request, HttpResponse &response) {
         AppSettings.mav_port_out = atoi(request.getPostParameter("mav_port_out").c_str());
         AppSettings.baud_rate = atoi(request.getPostParameter("baud_rate").c_str());
         AppSettings.ota_link = request.getPostParameter("ota_link");
+		AppSettings.debug_output = request.getPostParameter("debug_output") == "1";
 
         if (request.getPostParameter("do_update").length() > 0)
             ota_update();    
@@ -31,6 +32,9 @@ void onSettings(HttpRequest &request, HttpResponse &response) {
     vars["ota_link"] = AppSettings.ota_link;
     vars["mav_port_in"] = AppSettings.mav_port_in;
     vars["mav_port_out"] = AppSettings.mav_port_out;
+
+	vars["dbg_on"] = AppSettings.debug_output ? "checked='checked'" : "";
+	vars["dbg_off"] = !AppSettings.debug_output ? "checked='checked'" : "";
 
     vars["sw_ver"] = SW_VER;
     vars["hw_ver"] = HW_VER;
@@ -46,6 +50,12 @@ void onIpConfig(HttpRequest &request, HttpResponse &response)
 		AppSettings.ip = request.getPostParameter("ip");
 		AppSettings.netmask = request.getPostParameter("netmask");
 		AppSettings.gateway = request.getPostParameter("gateway");
+
+		AppSettings.ap_ssid = request.getPostParameter("ap_ssid");
+
+        if (request.getPostParameter("ap_password").length() >= 8)
+            AppSettings.ap_password = request.getPostParameter("ap_password");
+
 		debugf("Updating IP settings: %d", AppSettings.ip.isNull());
 
         AppSettings.save();
@@ -55,8 +65,13 @@ void onIpConfig(HttpRequest &request, HttpResponse &response)
 	auto &vars = tmpl->variables();
 
 	bool dhcp = WifiStation.isEnabledDHCP();
+
+
+
 	vars["dhcpon"] = dhcp ? "checked='checked'" : "";
 	vars["dhcpoff"] = !dhcp ? "checked='checked'" : "";
+    vars["ap_ssid"] = AppSettings.ap_ssid;
+    vars["ap_password"] = AppSettings.ap_password;
 
 	if (!WifiStation.getIP().isNull())
 	{

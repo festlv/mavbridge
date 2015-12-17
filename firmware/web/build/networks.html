@@ -315,7 +315,7 @@
 
             <form method="post" action="">
                 <fieldset>
-                    <legend>IP Address</legend>
+                    <legend>Client mode settings</legend>
                     <div class="col-md-offset-2">
                         <div class="form-group">
                             <label>Use DHCP</label>
@@ -342,6 +342,20 @@
                         </div>
                     </div>
                 </fieldset>
+                <fieldset>
+                    <legend>AP settings</legend>
+                    <div class="col-md-offset-2">
+                        <div class="form-group">
+                            <label>SSID</label>
+                            <input class="form-control" style="width: 250px" type="text" name="ap_ssid" value="{ap_ssid}">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input class="form-control" style="width: 250px" type="text" name="ap_password" value="{ap_password}">
+                        </div>
+                    </div>
+                </fieldset>
+
                 <div class="col-md-offset-3">
                     <input type="submit" class="btn btn-success">
                 </div>
