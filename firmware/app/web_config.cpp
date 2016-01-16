@@ -97,9 +97,11 @@ void webserver_init()
 {
 
     uptime_init();
-	WifiStation.enable(true);
 
-	if (AppSettings.exist())
+    WifiStation.enable(true);
+
+	if (AppSettings.exist() && AppSettings.ssid.length() != 0 && \
+            AppSettings.password.length() >= 8)
 	{
 		WifiStation.config(AppSettings.ssid, AppSettings.password);
 		if (!AppSettings.dhcp && !AppSettings.ip.isNull())
@@ -116,7 +118,8 @@ void webserver_init()
     }
 
     // Start AP for configuration
-	WifiAccessPoint.enable(true);
+
+    WifiAccessPoint.enable(true);
     AUTH_MODE mode = AUTH_OPEN;
     String password = "";
 
@@ -125,7 +128,7 @@ void webserver_init()
         password = AppSettings.ap_password;
     }
 
-	WifiAccessPoint.config(AppSettings.ap_ssid, password, mode);
+    WifiAccessPoint.config(AppSettings.ap_ssid, password, mode);
 
 	// Run WEB server on system ready
 	System.onReady(startServers);

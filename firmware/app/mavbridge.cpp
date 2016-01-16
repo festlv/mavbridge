@@ -8,6 +8,9 @@
 #define MAX_CLIENTS 5
 #define MAX_INTERFACES 2
 
+#define NET_LED_PIN     12
+#define UART_LED_PIN    13
+
 #define LED_PIN 13
 
 IPAddress client_list[MAX_CLIENTS];
@@ -40,7 +43,7 @@ void ready()
 	// If AP is enabled:
 	debugf("AP. ip: %s mac: %s", WifiAccessPoint.getIP().toString().c_str(), WifiAccessPoint.getMAC().c_str());
 
-    uart_recv_timer.initializeMs(10, timer_interrupt).start();
+    uart_recv_timer.initializeMs(1, timer_interrupt).start();
 
     interface_update_timer.initializeMs(1000, interface_update_interrupt).start();
 
@@ -85,7 +88,8 @@ static uint8_t udp_buffer[512];
 
 void udp_receive_callback(UdpConnection& connection, char *data, int size, 
         IPAddress remoteIP, uint16_t remotePort) {
-    
+
+    digitalWrite(NET_LED_PIN, 1);    
     //test if this IP is already in client list
     if (num_clients > 0) {
         for (uint8_t i=0; i < num_clients; i++) {
@@ -112,6 +116,7 @@ existing_client:
         }
     }
 
+    digitalWrite(NET_LED_PIN, 0);    
     return;
 }
 
@@ -125,7 +130,7 @@ void timer_interrupt() {
     int read_len = Serial.readMemoryBlock((char*)in_buffer, RX_BUFF_SIZE);
     for (int idx=0; idx < read_len; idx++) {
         if (mavlink_parse_char(MAVLINK_COMM_0, in_buffer[idx], &msg, &status)) {
-            digitalWrite(LED_PIN, 0);
+            digitalWrite(UART_LED_PIN, 1);
             //mavlink packet received from UART
             //debugf("UART > : %d\n", msg.msgid, msg.len);
 
@@ -149,7 +154,7 @@ void timer_interrupt() {
                 for (uint8_t i=0; i < num_clients; i++)
                     udp.sendTo(client_list[i], AppSettings.mav_port_out, (const char*)out_buffer, len);
             }
-            digitalWrite(LED_PIN, 1);
+            digitalWrite(UART_LED_PIN, 0);
         }
     }
 }
@@ -161,10 +166,15 @@ void mavbridge_get_status(uint32_t &uart_packets_received, uint32_t &net_packets
 
 void mavbridge_init() 
 {
-    pinMode(LED_PIN, OUTPUT);
-    digitalWrite(LED_PIN, 0);
-    delay(500);
-    digitalWrite(LED_PIN, 1);
+    pinMode(UART_LED_PIN, OUTPUT);
+    pinMode(NET_LED_PIN, OUTPUT);
+
+    digitalWrite(UART_LED_PIN, 1);
+    digitalWrite(NET_LED_PIN, 1);
+
+    delay(200);
+    digitalWrite(UART_LED_PIN, 0);
+    digitalWrite(NET_LED_PIN, 0);
 
 	// Set system ready callback method
 	System.onReady(ready);

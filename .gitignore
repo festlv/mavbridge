@@ -1,6 +1,8 @@
 firmware/mav.*
 firmware/out/*
+udp-test-firmware/out/*
 firmware/tags
 hardware/_autosave*
 *-bak
 *-cache.lib
+.ropeproject

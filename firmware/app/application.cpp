@@ -12,6 +12,7 @@ void init()
     //this has to be done because we can't access settings before mounting
     system_set_os_print(0);
     Serial.systemDebugOutput(false);
+
 	int slot = rboot_get_current_rom();
 
 	if (slot == 0) {
@@ -20,15 +21,13 @@ void init()
 		spiffs_mount_manual(RBOOT_SPIFFS_1 + 0x40200000, SPIFF_SIZE);
 	}
 
-    
-
-
+	AppSettings.load();
     if (AppSettings.exist() && AppSettings.baud_rate) {
         Serial.begin(AppSettings.baud_rate);
     } else {
         Serial.begin(DEFAULT_MAVLINK_BAUDRATE);
     }
-	AppSettings.load();
+
     Serial.systemDebugOutput(AppSettings.debug_output);
 
     if (!AppSettings.debug_output) 
