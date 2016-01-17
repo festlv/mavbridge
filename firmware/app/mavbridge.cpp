@@ -4,14 +4,11 @@
 #include "AppSettings.h"
 
 #include "mavlink/ardupilotmega/mavlink.h"
+#include "mavbridge.h"
 
 #define MAX_CLIENTS 5
 #define MAX_INTERFACES 2
 
-#define NET_LED_PIN     12
-#define UART_LED_PIN    13
-
-#define LED_PIN 13
 
 IPAddress client_list[MAX_CLIENTS];
 

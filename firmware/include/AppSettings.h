@@ -39,6 +39,22 @@ struct ApplicationSettingsStorage
     int mav_port_out;
     String ota_link;
 
+    void restore() {
+        baud_rate = DEFAULT_MAVLINK_BAUDRATE;
+        baud_rate = DEFAULT_MAVLINK_BAUDRATE;
+        mav_port_in = DEFAULT_MAVLINK_PORT;
+        mav_port_out = DEFAULT_MAVLINK_PORT;
+        ota_link = DEFAULT_OTA_LINK;
+
+        ap_password = DEFAULT_AP_PASSWORD;
+        ap_ssid = DEFAULT_AP_SSID;
+        ssid = "";
+        password ="";
+        dhcp = true;
+        debug_output = false;
+    }
+
+
 	void load()
 	{
 		DynamicJsonBuffer jsonBuffer;
@@ -124,6 +140,10 @@ struct ApplicationSettingsStorage
 	bool exist() { return fileExist(APP_SETTINGS_FILE); }
 };
 
+#define RESTORE_PARAMETERS_PIN 0
+
 extern ApplicationSettingsStorage AppSettings;
+
+void app_settings_tick_10hz();
 
 #endif /* INCLUDE_APPSETTINGS_H_ */
