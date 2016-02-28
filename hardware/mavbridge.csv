@@ -1,24 +1,40 @@
-Reference, Value, Footprint, Datasheet, MFN, MFP, Description, S1PN, S1PL, Package ID, Characteristics
-U1,ESP-12E,ESP8266:ESP-12E,https://www.adafruit.com/images/product-files/2471/0A-ESP8266__Datasheet__EN_v4.3.pdf,Espressif,ESP-12,Aliexpress/ebay,,,,
-R7,120R,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD07120RL,,603-RT0603DRD07120RL,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD07120RL/,0603,
-C2,0.1uF,Capacitors_SMD:C_0603,http://www.mouser.com/ds/2/281/c02e-2905.pdf,Murata,GRM188R71H104KA93D,,81-GRM39X104K50D,http://eu.mouser.com/ProductDetail/Murata-Electronics/GRM188R71H104KA93D/,0603,50V, 0.1uF X7R
-R9,10K,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD074K7L,4.7kOhm,603-RT0603DRD074K7L,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD074K7L/,0603,
-C3,22uF,Capacitors_SMD:C_0805,http://www.mouser.com/ds/2/281/c02e-2905.pdf,Murata,GRM21BR60J226ME39L,,81-GRM21R60J226ME39L,http://eu.mouser.com/ProductDetail/Murata-Electronics/GRM21BR60J226ME39L,0805,6.3V X5R 20% 
-D3,UART,LEDs:LED-0603,http://www.mouser.com/ds/2/216/APT1608EC-34957.pdf,Kingbright,APT1608EC,,604-APT1608EC,http://eu.mouser.com/ProductDetail/Kingbright/APT1608EC,0603,Red 0603 LED
-P1,PX4,DF13:DF13-6,http://www.mouser.com/ds/2/185/en_DF13_20130411-268487.pdf,Hirose Connector,DF13A-6P-1.25H(20),DF13 series,798-DF13A6P125H20,http://eu.mouser.com/ProductDetail/Hirose-Connector/DF13A-6P-125H20/,,
-F1,F_Small,Resistors_SMD:R_1206,http://www.mouser.com/ds/2/87/Bus_Elx_DS_4397_PTS1206_Series-479599.pdf,Bussmann / Eaton,PTS120616V035,,504-PTS120616V035,http://eu.mouser.com/ProductDetail/Bussmann-Eaton/PTS120616V035,1206,0.35A hold current, 0.5A trip current, 16V
-D6,D_Schottky,Diodes_SMD:SOD-323,http://www.mouser.com/ds/2/308/NSR0530H-D-775571.pdf,ON semiconductor,NSR0530HT1G,,863-NSR0530HT1G,http://eu.mouser.com/ProductDetail/ON-Semiconductor/NSR0530HT1G,SOD-323-2,0.5A, 30V
-P2,DEBUG,Pin_Headers:Pin_Header_Straight_1x06,
-P3,PWR,Pin_Headers:Pin_Header_Straight_1x02,
-C4,22uF,Capacitors_SMD:C_0805,http://www.mouser.com/ds/2/281/c02e-2905.pdf,Murata,GRM21BR60J226ME39L,,81-GRM21R60J226ME39L,http://eu.mouser.com/ProductDetail/Murata-Electronics/GRM21BR60J226ME39L,0805,6.3V X5R 20% 
-R6,10K,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD074K7L,4.7kOhm,603-RT0603DRD074K7L,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD074K7L/,0603,
-R5,10K,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD074K7L,4.7kOhm,603-RT0603DRD074K7L,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD074K7L/,0603,
-R3,10K,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD074K7L,4.7kOhm,603-RT0603DRD074K7L,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD074K7L/,0603,
-R2,10K,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD074K7L,4.7kOhm,603-RT0603DRD074K7L,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD074K7L/,0603,
-R8,120R,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD07120RL,,603-RT0603DRD07120RL,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD07120RL/,0603,
-R1,120R,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD07120RL,,603-RT0603DRD07120RL,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD07120RL/,0603,
-R4,120R,Resistors_SMD:R_0603,http://www.mouser.com/ds/2/447/PYu-RT_1-to-0.05_RoHS_L_6-772266.pdf,Yageo,RT0603DRD07120RL,,603-RT0603DRD07120RL,http://eu.mouser.com/ProductDetail/Yageo/RT0603DRD07120RL/,0603,
-C1,0.1uF,Capacitors_SMD:C_0603,http://www.mouser.com/ds/2/281/c02e-2905.pdf,Murata,GRM188R71H104KA93D,,81-GRM39X104K50D,http://eu.mouser.com/ProductDetail/Murata-Electronics/GRM188R71H104KA93D/,0603,50V, 0.1uF X7R
-D4,NET,LEDs:LED-0603,http://www.mouser.com/ds/2/216/APT1608EC-34957.pdf,Kingbright,AP1608SGC,,604-AP1608SGC,http://eu.mouser.com/ProductDetail/Kingbright/APT1608EC,0603,Green 0603 LED
-D1,BAT54TW,sot363:SOT-363,http://www.mouser.com/ds/2/115/ds30152-61195.pdf,Diodes Inc.,BAT54TW-7-F,,621-BAT54TW-F,http://eu.mouser.com/ProductDetail/Diodes-Incorporated/BAT54TW-7-F/,SOT-363,0.2Vf @ small current
-U2,AP7361,TO_SOT_Packages_SMD:SOT-223,http://www.mouser.com/ds/2/115/AP7361C-775034.pdf,Diodes Incorporated,AP7361C-33E-13,,621-AP7361C-33E-13,http://eu.mouser.com/Search/ProductDetail.aspx?R=AP7361C-33E-13virtualkey62110000virtualkey621-AP7361C-33E-13,SOT-223-3,
+Refs,Characteristics,Description,MFN,MFP,Package ID,S1PL,S1PN,datasheet,footprint,value
+C2,"50V, 0.1uF X7R",,Samsung,CMC0603-100N-KX50-S,0603,https://www.maritex.com.pl/en/cmc0603-100n-kx50-s-i-28284,CMC0603-100N-KX50-S,,Capacitors_SMD:C_0603,0.1uF
+R10,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
+R2,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
+R3,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
+R5,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
+R6,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
+R9,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
+C3,10V X5R 20% ,,Samsung, CL21A106KPFNNNE 10UF 10V 10% X5R,0805,https://www.maritex.com.pl/en/cmc0805-10u-kx5r-10-s-i-26703,CMC0805-10U-KX5R-10-S,,Capacitors_SMD:C_0805,10uF
+C4,10V X5R 20% ,,Samsung, CL21A106KPFNNNE 10UF 10V 10% X5R,0805,https://www.maritex.com.pl/en/cmc0805-10u-kx5r-10-s-i-26703,CMC0805-10U-KX5R-10-S,,Capacitors_SMD:C_0805,10uF
+R1,5% 1/10W,,Samsung,RC1608J121CS,0603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R
+R11,5% 1/10W,,Samsung,RC1608J121CS,0603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R
+R4,5% 1/10W,,Samsung,RC1608J121CS,0603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R
+R7,5% 1/10W,,Samsung,RC1608J121CS,0603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R
+R8,5% 1/10W,,Samsung,RC1608J121CS,0603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R
+U2,,,Diodes Incorporated,AP7361C-33E-13,SOT-223-3,http://eu.mouser.com/Search/ProductDetail.aspx?R=AP7361C-33E-13virtualkey62110000virtualkey621-AP7361C-33E-13,621-AP7361C-33E-13,http://www.mouser.com/ds/2/115/AP7361C-775034.pdf,TO_SOT_Packages_SMD:SOT-223,AP7361
+P3,DNP,DNP,,,,,,,pin_headers_1.27mm:Pin_Header_1.27mm_2x5,CONN_02X05
+D6,"0.5A, 30V",,ON semiconductor,NSR0530HT1G,SOD-323-2,http://eu.mouser.com/ProductDetail/ON-Semiconductor/NSR0530HT1G,863-NSR0530HT1G,http://www.mouser.com/ds/2/308/NSR0530H-D-775571.pdf,Diodes_SMD:SOD-323,D_Schottky
+U1,,,AI-Thinker,ESP-12E,ESP12E,http://www.aliexpress.com/item/Free-Shipping-10pcs-lot-ESP8266-remote-serial-Port-WIFI-wireless-module-through-walls-Wang-ESP-12/1967135461.html,ESP-12E,https://www.adafruit.com/images/product-files/2471/0A-ESP8266__Datasheet__EN_v4.3.pdf,ESP8266:ESP-12E,ESP-12E
+F1,"0.35A hold current, 0.5A trip current, 16V",,Way-on,LP-NSM035 LEAD FREE,1206,https://www.maritex.com.pl/en/rfsn035-i-4600,RFSN035,https://www.maritex.com.pl/media/uploads/products/pa/rfsn035.pdf,Resistors_SMD:R_1206,F_Small
+D4,Green 0603 LED,,Hongli,HL-PST-1608H3GC,0603,https://www.maritex.com.pl/en/light-emitting-diodes-smd-0603-standard-brightness/LED0603-GYW120-H-i-24856-c-11166,LED0603-GYW120-H,https://www.maritex.com.pl/media/uploads/products/op/PST-1608H3GC.pdf,LEDs:LED-0603,NET
+P1,,DF13 series,Hirose Connector,DF13A-6P-1.25H(20),,http://eu.mouser.com/ProductDetail/Hirose-Connector/DF13A-6P-125H20/,798-DF13A6P125H20,http://www.mouser.com/ds/2/185/en_DF13_20130411-268487.pdf,DF13:DF13-6,PX4
+SW1,,NO pushbutton,Innocent,INT-1440F20A,,TACTD44H20B160,Maritex,,tact_switch:TACT_SW_TACTD44H20B160,SW_PUSH
+W1,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
+W2,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
+W3,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
+W4,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
+W5,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
+W6,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
+W7,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
+W8,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
+W9,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
+D3,Red 0603 LED,,Hongli,HL-PST-1608S9AC 50-70MCD,0603,https://www.maritex.com.pl/en/light-emitting-diodes-smd-0603-standard-brightness/LED0603-RW120-i-28429-c-11166,LED0603-RW120,https://www.maritex.com.pl/media/uploads/products/op/1608S9AC.pdf,LEDs:LED-0603,UART
+P2,2.54mm pitch 1x4 pin,,Ulo,ULO-PH409-1*4SF11,,https://www.maritex.com.pl/en/pls04su-i-35905,PLS04SU,https://www.maritex.com.pl/media/uploads/PRODUKTY_PDF/con/PLSXXSU.pdf,Pin_Headers:Pin_Header_Straight_1x04,UART
+D1,3.4V zener,,ON Semiconductor,MM3Z3V3ST1G,SOD-323,http://eu.mouser.com/ProductDetail/ON-Semiconductor/MM3Z3V3ST1G/?qs=HVbQlW5zcXUr40rey9MAng%3D%3D,"
+863-MM3Z3V3ST1G
+",http://www.mouser.com/ds/2/308/MM3Z2V4ST1-D-95078.pdf,Diodes_SMD:SOD-323,3.4V zener
+D2,3.4V zener,,ON Semiconductor,MM3Z3V3ST1G,SOD-323,http://eu.mouser.com/ProductDetail/ON-Semiconductor/MM3Z3V3ST1G/?qs=HVbQlW5zcXUr40rey9MAng%3D%3D,"
+863-MM3Z3V3ST1G
+",http://www.mouser.com/ds/2/308/MM3Z2V4ST1-D-95078.pdf,Diodes_SMD:SOD-323,3.4V zener
