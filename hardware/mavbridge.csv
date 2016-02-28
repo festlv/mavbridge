@@ -1,40 +1,40 @@
-Refs,Characteristics,Description,MFN,MFP,Package ID,S1PL,S1PN,datasheet,footprint,value
-C2,"50V, 0.1uF X7R",,Samsung,CMC0603-100N-KX50-S,0603,https://www.maritex.com.pl/en/cmc0603-100n-kx50-s-i-28284,CMC0603-100N-KX50-S,,Capacitors_SMD:C_0603,0.1uF
-R10,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
-R2,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
-R3,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
-R5,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
-R6,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
-R9,5% 1/10W,,Yageo, RC0603JR-0710KL,0603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K
-C3,10V X5R 20% ,,Samsung, CL21A106KPFNNNE 10UF 10V 10% X5R,0805,https://www.maritex.com.pl/en/cmc0805-10u-kx5r-10-s-i-26703,CMC0805-10U-KX5R-10-S,,Capacitors_SMD:C_0805,10uF
-C4,10V X5R 20% ,,Samsung, CL21A106KPFNNNE 10UF 10V 10% X5R,0805,https://www.maritex.com.pl/en/cmc0805-10u-kx5r-10-s-i-26703,CMC0805-10U-KX5R-10-S,,Capacitors_SMD:C_0805,10uF
-R1,5% 1/10W,,Samsung,RC1608J121CS,0603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R
-R11,5% 1/10W,,Samsung,RC1608J121CS,0603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R
-R4,5% 1/10W,,Samsung,RC1608J121CS,0603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R
-R7,5% 1/10W,,Samsung,RC1608J121CS,0603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R
-R8,5% 1/10W,,Samsung,RC1608J121CS,0603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R
-U2,,,Diodes Incorporated,AP7361C-33E-13,SOT-223-3,http://eu.mouser.com/Search/ProductDetail.aspx?R=AP7361C-33E-13virtualkey62110000virtualkey621-AP7361C-33E-13,621-AP7361C-33E-13,http://www.mouser.com/ds/2/115/AP7361C-775034.pdf,TO_SOT_Packages_SMD:SOT-223,AP7361
-P3,DNP,DNP,,,,,,,pin_headers_1.27mm:Pin_Header_1.27mm_2x5,CONN_02X05
-D6,"0.5A, 30V",,ON semiconductor,NSR0530HT1G,SOD-323-2,http://eu.mouser.com/ProductDetail/ON-Semiconductor/NSR0530HT1G,863-NSR0530HT1G,http://www.mouser.com/ds/2/308/NSR0530H-D-775571.pdf,Diodes_SMD:SOD-323,D_Schottky
-U1,,,AI-Thinker,ESP-12E,ESP12E,http://www.aliexpress.com/item/Free-Shipping-10pcs-lot-ESP8266-remote-serial-Port-WIFI-wireless-module-through-walls-Wang-ESP-12/1967135461.html,ESP-12E,https://www.adafruit.com/images/product-files/2471/0A-ESP8266__Datasheet__EN_v4.3.pdf,ESP8266:ESP-12E,ESP-12E
-F1,"0.35A hold current, 0.5A trip current, 16V",,Way-on,LP-NSM035 LEAD FREE,1206,https://www.maritex.com.pl/en/rfsn035-i-4600,RFSN035,https://www.maritex.com.pl/media/uploads/products/pa/rfsn035.pdf,Resistors_SMD:R_1206,F_Small
-D4,Green 0603 LED,,Hongli,HL-PST-1608H3GC,0603,https://www.maritex.com.pl/en/light-emitting-diodes-smd-0603-standard-brightness/LED0603-GYW120-H-i-24856-c-11166,LED0603-GYW120-H,https://www.maritex.com.pl/media/uploads/products/op/PST-1608H3GC.pdf,LEDs:LED-0603,NET
-P1,,DF13 series,Hirose Connector,DF13A-6P-1.25H(20),,http://eu.mouser.com/ProductDetail/Hirose-Connector/DF13A-6P-125H20/,798-DF13A6P125H20,http://www.mouser.com/ds/2/185/en_DF13_20130411-268487.pdf,DF13:DF13-6,PX4
-SW1,,NO pushbutton,Innocent,INT-1440F20A,,TACTD44H20B160,Maritex,,tact_switch:TACT_SW_TACTD44H20B160,SW_PUSH
-W1,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
-W2,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
-W3,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
-W4,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
-W5,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
-W6,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
-W7,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
-W8,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
-W9,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P
-D3,Red 0603 LED,,Hongli,HL-PST-1608S9AC 50-70MCD,0603,https://www.maritex.com.pl/en/light-emitting-diodes-smd-0603-standard-brightness/LED0603-RW120-i-28429-c-11166,LED0603-RW120,https://www.maritex.com.pl/media/uploads/products/op/1608S9AC.pdf,LEDs:LED-0603,UART
-P2,2.54mm pitch 1x4 pin,,Ulo,ULO-PH409-1*4SF11,,https://www.maritex.com.pl/en/pls04su-i-35905,PLS04SU,https://www.maritex.com.pl/media/uploads/PRODUKTY_PDF/con/PLSXXSU.pdf,Pin_Headers:Pin_Header_Straight_1x04,UART
+Refs,Characteristics,Description,MFN,MFP,Package ID,S1PL,S1PN,datasheet,footprint,value,Price at 50 units,Price at 100 units
+C2,"50V, 0.1uF X7R",,Samsung,CMC0603-100N-KX50-S,603,https://www.maritex.com.pl/en/cmc0603-100n-kx50-s-i-28284,CMC0603-100N-KX50-S,,Capacitors_SMD:C_0603,0.1uF,"0,0032","0,0032"
+R10,5% 1/10W,,Yageo, RC0603JR-0710KL,603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K,"0,0029","0,0029"
+R2,5% 1/10W,,Yageo, RC0603JR-0710KL,603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K,"0,0029","0,0029"
+R3,5% 1/10W,,Yageo, RC0603JR-0710KL,603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K,"0,0029","0,0029"
+R5,5% 1/10W,,Yageo, RC0603JR-0710KL,603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K,"0,0029","0,0029"
+R6,5% 1/10W,,Yageo, RC0603JR-0710KL,603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K,"0,0029","0,0029"
+R9,5% 1/10W,,Yageo, RC0603JR-0710KL,603,https://www.maritex.com.pl/en/rmc0603-10k-y-i-43237,RMC0603-10K-Y,,Resistors_SMD:R_0603,10K,"0,0029","0,0029"
+C3,10V X5R 20% ,,Samsung, CL21A106KPFNNNE 10UF 10V 10% X5R,805,https://www.maritex.com.pl/en/cmc0805-10u-kx5r-10-s-i-26703,CMC0805-10U-KX5R-10-S,,Capacitors_SMD:C_0805,10uF,"0,0204","0,0204"
+C4,10V X5R 20% ,,Samsung, CL21A106KPFNNNE 10UF 10V 10% X5R,805,https://www.maritex.com.pl/en/cmc0805-10u-kx5r-10-s-i-26703,CMC0805-10U-KX5R-10-S,,Capacitors_SMD:C_0805,10uF,"0,0204","0,0204"
+R1,5% 1/10W,,Samsung,RC1608J121CS,603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R,"0,0029","0,0029"
+R11,5% 1/10W,,Samsung,RC1608J121CS,603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R,"0,0029","0,0029"
+R4,5% 1/10W,,Samsung,RC1608J121CS,603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R,"0,0029","0,0029"
+R7,5% 1/10W,,Samsung,RC1608J121CS,603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R,"0,0029","0,0029"
+R8,5% 1/10W,,Samsung,RC1608J121CS,603,https://www.maritex.com.pl/en/rmc0603-120r-s-i-30969,RMC0603-120R-S,,Resistors_SMD:R_0603,120R,"0,0029","0,0029"
+U2,200mV dropout,,HTC-Korea,TJ3965S-3.3V-3L,SOT-223-3,https://www.maritex.com.pl/en/lm3965s-33-i-13481,LM3965S-3.3,http://www.mouser.com/ds/2/115/AP7361C-775034.pdf,TO_SOT_Packages_SMD:SOT-223,LM3965S-3.3,"0,202","0,1905"
+P3,DNP,DNP,,,,,,,pin_headers_1.27mm:Pin_Header_1.27mm_2x5,CONN_02X05,,
+D6,"0.5A, 30V",,ON semiconductor,NSR0530HT1G,SOD-323-2,http://eu.mouser.com/ProductDetail/ON-Semiconductor/NSR0530HT1G,863-NSR0530HT1G,http://www.mouser.com/ds/2/308/NSR0530H-D-775571.pdf,Diodes_SMD:SOD-323,D_Schottky,"0,129","0,045"
+U1,,,AI-Thinker,ESP-12E,ESP12E,http://www.aliexpress.com/item/Free-Shipping-10pcs-lot-ESP8266-remote-serial-Port-WIFI-wireless-module-through-walls-Wang-ESP-12/1967135461.html,ESP-12E,https://www.adafruit.com/images/product-files/2471/0A-ESP8266__Datasheet__EN_v4.3.pdf,ESP8266:ESP-12E,ESP-12E,"2,1","2,1"
+F1,"0.35A hold current, 0.5A trip current, 16V",,Way-on,LP-NSM035 LEAD FREE,1206,https://www.maritex.com.pl/en/rfsn035-i-4600,RFSN035,https://www.maritex.com.pl/media/uploads/products/pa/rfsn035.pdf,Resistors_SMD:R_1206,F_Small,"0,0803","0,0594"
+D4,Green 0603 LED,,Hongli,HL-PST-1608H3GC,603,https://www.maritex.com.pl/en/light-emitting-diodes-smd-0603-standard-brightness/LED0603-GYW120-H-i-24856-c-11166,LED0603-GYW120-H,https://www.maritex.com.pl/media/uploads/products/op/PST-1608H3GC.pdf,LEDs:LED-0603,NET,"0,0367","0,0337"
+P1,,DF13 series,Hirose Connector,DF13A-6P-1.25H(20),,http://eu.mouser.com/ProductDetail/Hirose-Connector/DF13A-6P-125H20/,798-DF13A6P125H20,http://www.mouser.com/ds/2/185/en_DF13_20130411-268487.pdf,DF13:DF13-6,PX4,"0,434","0,38"
+SW1,,NO pushbutton,Innocent,INT-1440F20A,,https://www.maritex.com.pl/en/tactd44h20b160-i-22931,TACTD44H20B160,,tact_switch:TACT_SW_TACTD44H20B160,SW_PUSH,"0,1331","0,1193"
+W1,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P,,
+W2,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P,,
+W3,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P,,
+W4,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P,,
+W5,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P,,
+W6,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P,,
+W7,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P,,
+W8,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P,,
+W9,,,,,,,,,Measurement_Points:Measurement_Point_Round-SMD-Pad_Small,TEST_1P,,
+D3,Red 0603 LED,,Hongli,HL-PST-1608S9AC 50-70MCD,603,https://www.maritex.com.pl/en/light-emitting-diodes-smd-0603-standard-brightness/LED0603-RW120-i-28429-c-11166,LED0603-RW120,https://www.maritex.com.pl/media/uploads/products/op/1608S9AC.pdf,LEDs:LED-0603,UART,"0,0241","0,023"
+P2,2.54mm pitch 1x4 pin,,Ulo,ULO-PH409-1*4SF11,,https://www.maritex.com.pl/en/pls04su-i-35905,PLS04SU,https://www.maritex.com.pl/media/uploads/PRODUKTY_PDF/con/PLSXXSU.pdf,Pin_Headers:Pin_Header_Straight_1x04,UART,"0,0138","0,0126"
 D1,3.4V zener,,ON Semiconductor,MM3Z3V3ST1G,SOD-323,http://eu.mouser.com/ProductDetail/ON-Semiconductor/MM3Z3V3ST1G/?qs=HVbQlW5zcXUr40rey9MAng%3D%3D,"
 863-MM3Z3V3ST1G
-",http://www.mouser.com/ds/2/308/MM3Z2V4ST1-D-95078.pdf,Diodes_SMD:SOD-323,3.4V zener
+",http://www.mouser.com/ds/2/308/MM3Z2V4ST1-D-95078.pdf,Diodes_SMD:SOD-323,3.4V zener,"0,04","0,04"
 D2,3.4V zener,,ON Semiconductor,MM3Z3V3ST1G,SOD-323,http://eu.mouser.com/ProductDetail/ON-Semiconductor/MM3Z3V3ST1G/?qs=HVbQlW5zcXUr40rey9MAng%3D%3D,"
 863-MM3Z3V3ST1G
-",http://www.mouser.com/ds/2/308/MM3Z2V4ST1-D-95078.pdf,Diodes_SMD:SOD-323,3.4V zener
+",http://www.mouser.com/ds/2/308/MM3Z2V4ST1-D-95078.pdf,Diodes_SMD:SOD-323,3.4V zener,"0,04","0,04"
