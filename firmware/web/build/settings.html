@@ -40,16 +40,21 @@
 
     <div class="row">
         <div class="col-lg-6 col-md-offset-3">
-		<div class="alert alert-warning" role="alert">Changes will be applied after reboot</div>
+            <div class="alert alert-warning" role="alert">{message}</div>
         <h2>Settings</h2>
             <form method="post" action="">
                 <fieldset>
                     <legend>Serial settings</legend>
                     <div class="col-md-offset-2">
                         <div class="form-group">
-                            <label>MAVLink baud rate</label>
+                            <label>Serial baud rate</label>
                             <input class="form-control" style="width: 250px" type="text" name="baud_rate" value="{baud_rate}">
                         </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>UDP transport settings</legend>
+                    <div class="col-md-offset-2">
                         <div class="form-group">
                             <label>Listen port</label>
                             <input class="form-control" style="width: 250px" type="text" name="mav_port_in" value="{mav_port_in}">
@@ -61,9 +66,8 @@
                     </div>
                 </fieldset>
 
-
-                
-                <legend>Firmware settings</legend>
+                <fieldset>
+                    <legend>Firmware settings</legend>
                     <div class="col-md-offset-2">
                         <div class="form-group">
                             <label>Firmware update server &amp; path</label>
@@ -90,7 +94,8 @@
 
 
                 <div class="col-md-offset-3">
-                    <input type="submit" class="btn btn-success">
+                    <input type="submit" name="save" value="Save" class="btn">
+                    <input type="submit" name="save_reboot" value="Save &amp; reboot" class="btn btn-success">
                 </div>
             </form>
         </div>

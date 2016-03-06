@@ -9,6 +9,13 @@ BssList networks;
 String network, password;
 Timer connectionTimer;
 
+Timer restartTimer;
+
+void settingsRestart()
+{
+    System.restart();
+}
+
 void onSettings(HttpRequest &request, HttpResponse &response) {
 	TemplateFileStream *tmpl = new TemplateFileStream("settings.html");
 	auto &vars = tmpl->variables();
@@ -22,11 +29,21 @@ void onSettings(HttpRequest &request, HttpResponse &response) {
 		AppSettings.debug_output = request.getPostParameter("debug_output") == "1";
 
         if (request.getPostParameter("do_update").length() > 0)
-            ota_update();    
-        
-        AppSettings.save();
+        {
+            ota_update();
+        } 
 
+        if (request.getPostParameter("save_reboot").length() > 0)
+        {
+			restartTimer.initializeMs(1000, settingsRestart).startOnce();
+            vars["message"] = "MAVBridge is now being restarted...";
+        }
+    } 
+    else
+    {
+        vars["message"] = "Settings will be applied after restart";
     }
+
 
     vars["baud_rate"] = AppSettings.baud_rate;
     vars["ota_link"] = AppSettings.ota_link;
@@ -40,6 +57,9 @@ void onSettings(HttpRequest &request, HttpResponse &response) {
     vars["hw_ver"] = HW_VER;
 
 	response.sendTemplate(tmpl); // will be automatically deleted
+
+    //save settings, reboot if neccessary
+    AppSettings.save();
 }
 
 void onIpConfig(HttpRequest &request, HttpResponse &response)

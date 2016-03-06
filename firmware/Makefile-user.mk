@@ -24,14 +24,14 @@ MODULES = app
 # COM_PORT = COM3
 
 # MacOS / Linux:
-# COM_PORT = /dev/tty.usbserial
+#COM_PORT = /dev/ttyUSB1
 
 # Com port speed
-COM_SPEED	= 921600
+COM_SPEED	= 115200
 
 SPIFF_FILES = web/build
 
-HW_VER ?= 1
+HW_VER ?= 2
 SW_VER ?= 1
 
 FW_UPDATE_LINK := "http://imprimus.lv/mavbridge/hw-$(HW_VER)/latest/"
