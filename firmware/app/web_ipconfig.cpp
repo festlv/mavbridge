@@ -23,6 +23,7 @@ void onSettings(HttpRequest &request, HttpResponse &response) {
 	if (request.getRequestMethod() == RequestMethod::POST)
 	{
         AppSettings.mav_port_in = atoi(request.getPostParameter("mav_port_in").c_str());
+        AppSettings.tcp_mav_port_in = atoi(request.getPostParameter("tcp_mav_port_in").c_str());
         AppSettings.mav_port_out = atoi(request.getPostParameter("mav_port_out").c_str());
         AppSettings.baud_rate = atoi(request.getPostParameter("baud_rate").c_str());
         AppSettings.ota_link = request.getPostParameter("ota_link");
@@ -48,6 +49,7 @@ void onSettings(HttpRequest &request, HttpResponse &response) {
     vars["baud_rate"] = AppSettings.baud_rate;
     vars["ota_link"] = AppSettings.ota_link;
     vars["mav_port_in"] = AppSettings.mav_port_in;
+    vars["tcp_mav_port_in"] = AppSettings.tcp_mav_port_in;
     vars["mav_port_out"] = AppSettings.mav_port_out;
 
 	vars["dbg_on"] = AppSettings.debug_output ? "checked='checked'" : "";

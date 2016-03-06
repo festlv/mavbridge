@@ -41,5 +41,6 @@ void init()
     mavbridge_init();
 
     pinMode(RESTORE_PARAMETERS_PIN, INPUT_PULLUP);
+
     ten_hz_timer.initializeMs(100, app_settings_tick_10hz).start();
 }

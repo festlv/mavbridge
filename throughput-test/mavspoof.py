@@ -33,6 +33,7 @@ class Spoofer:
         pitch = 0
         yaw = (- math.pi)
 
+        packets_sent = 0
         while True:
             try:
                 loop_start = time.time()
@@ -40,6 +41,7 @@ class Spoofer:
                 bytes_sent = 0
                 bytes_to_send = self.datarate
                 msg_heartbeat = self.conn.mav.heartbeat_encode(1, 1, 0, 0, 1).pack(self.conn.mav)
+                packets_sent += 1
                 bytes_sent += len(msg_heartbeat)
                 self.conn.write(msg_heartbeat)
 
@@ -51,6 +53,7 @@ class Spoofer:
                 if yaw > math.pi:
                     yaw = -math.pi
                 bytes_sent += len(msg_attitude)
+                packets_sent += 1
                 self.conn.write(msg_attitude)
 
                 # calculate how much data to send
@@ -70,6 +73,7 @@ class Spoofer:
                     for i in xrange(num_packets):
                         self.conn.write(msg_memory_vect)
                         bytes_sent += len(msg_memory_vect)
+                        packets_sent += 1
                         if packet_interval > 0:
                             time.sleep(packet_interval)
 
@@ -79,10 +83,16 @@ class Spoofer:
                 #sleep for the rest of second
                 if loop_dt < 1:
                     time.sleep(1 - loop_dt)
+
+                bytes_in = self.conn.port.inWaiting()
+
+                if bytes_in > 0:
+                    print(self.conn.port.read(bytes_in))
+
                 bytes_sent = 0
             except KeyboardInterrupt:
                 break
-
+        print "Total %d packets sent" % packets_sent
 
 
 if __name__ == '__main__':

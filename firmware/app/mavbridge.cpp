@@ -30,7 +30,7 @@ void ready()
     net_recv_timer.initializeMs(1, check_network_buffer).start();
 
     MavlinkServer::get_instance().initialize(AppSettings.mav_port_in, PROTO_UDP);
-    MavlinkServer::get_instance().initialize(AppSettings.mav_port_in, PROTO_TCP);
+    MavlinkServer::get_instance().initialize(AppSettings.tcp_mav_port_in, PROTO_TCP);
 }
 
 void check_network_buffer() {
@@ -45,15 +45,13 @@ void check_network_buffer() {
         for (int i=0; i < in_packet.length; i++) {
             Serial.write(in_packet.data[i]);
         }
-        */
-
+        */ 
         digitalWrite(NET_LED_PIN, 1);
         //try to decode incoming message 
         for (int i = 0; i < in_packet.length; i++) {
             if (mavlink_parse_char(MAVLINK_COMM_0, (uint8_t)in_packet.data[i], 
                         &net_in_msg, &net_in_status)) {
                 net_pkts_rcvd++;
-                debugf("UDP > : %d\n", net_in_msg.msgid);
                 //message decoded, send via serial
                 uint16_t len = mavlink_msg_to_send_buffer(net_buffer, &net_in_msg);
                 if (len > 0) {
@@ -175,6 +173,8 @@ bool MavlinkServer::tcp_client_receive(TcpClient &client, char* data, int size) 
     memcpy(&packet.data, data, size); 
     packet.length = size;
     incoming_message_queue.add(packet);
+
+    debugf("TCP < %d bytes\n", size);
     return true;
 }
 
@@ -187,6 +187,7 @@ void MavlinkServer::tcp_client_connected(TcpClient* client) {
     }
     //not found
     tcp_clients.add(client);  
+    debugf("Adding TCP client\n");
 }
 
 void MavlinkServer::tcp_client_complete(TcpClient& client, bool successful) {
@@ -240,7 +241,7 @@ void MavlinkServer::initialize(uint16_t port, mavlink_proto_type_t protocol)
         debugf("MavlinkServer listening to TCP at %d\n", port); 
     }
 
-    interface_update_timer.initializeMs(1000, MavlinkServer::interface_update_interrupt);
+    interface_update_timer.initializeMs(1000, MavlinkServer::interface_update_interrupt).start();
 }
 
 void MavlinkServer::transmit_packet(mavlink_message_t msg) {
@@ -248,22 +249,34 @@ void MavlinkServer::transmit_packet(mavlink_message_t msg) {
     static uint8_t out_buffer[MAVLINK_MAX_PACKET_LEN];
     uint16_t len = mavlink_msg_to_send_buffer(out_buffer, &msg);
 
+    uint8_t udp_out = 0;
+    uint8_t tcp_out = 0;
+
     if (len == 0) {
         return;
     }
 
     int i;
-    for (i=0; i < interfaces.size(); i++) {
-         udp_conn->sendTo(interfaces[i], AppSettings.mav_port_out, 
-                (const char*)out_buffer, len);
+
+    if (msg.msgid == 0) {
+        for (i=0; i < interfaces.size(); i++) {
+            udp_conn->sendTo(interfaces[i], AppSettings.mav_port_out, 
+                    (const char*)out_buffer, len);
+            udp_out++;
+        }
     }
     for (i=0; i < udp_clients.size(); i++) {
         udp_conn->sendTo(udp_clients[i], AppSettings.mav_port_out, 
                 (const char*)out_buffer, len);
+
+         udp_out++;
     }
 
     for (i=0; i < tcp_clients.size(); i++) {
         tcp_clients[i]->send((const char*)out_buffer, len, false);
-        tcp_clients[i]->flush();
+        //tcp_clients[i]->flush();
+        tcp_out++;
     }
+
+    debugf("OUT > %db, UDP: %d, TCP: %d", len, udp_out, tcp_out);
 }
