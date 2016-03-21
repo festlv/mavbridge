@@ -22,11 +22,22 @@ void onIndex(HttpRequest &request, HttpResponse &response)
     vars["mav_port_in"] = AppSettings.mav_port_in;
     vars["mav_port_out"] = AppSettings.mav_port_out;
     
-    uint32_t net_rcvd, uart_rcvd;
-    mavbridge_get_status(uart_rcvd, net_rcvd);
+    const MavlinkServer& srv = MavlinkServer::get_instance();    
+
+    vars["uart_pkts_rcvd"] = srv.ct_uart_in;
+    vars["uart_pkts_sent"] = srv.ct_uart_out;
     
-    vars["uart_pkts_rcvd"] = uart_rcvd;
-    vars["net_pkts_rcvd"] = net_rcvd;
+    vars["tcp_pkts_rcvd"] = srv.ct_tcp_in;
+    vars["tcp_pkts_sent"] = srv.ct_tcp_out;
+    vars["tcp_pkts_drp"] = srv.ct_tcp_dropped;
+ 
+    vars["udp_pkts_rcvd"] = srv.ct_udp_in;
+    vars["udp_pkts_sent"] = srv.ct_udp_out;
+
+
+
+
+    //vars["net_pkts_rcvd"] = net_rcvd;
 
     if (WifiAccessPoint.isEnabled()) {
         vars["ap_ssid"] = AppSettings.ap_ssid;

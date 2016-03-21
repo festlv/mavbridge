@@ -19,6 +19,7 @@ class MAVRecv:
         while True:
             try:
                 m = self.conn.recv_msg()
+
                 if m:
                     packets_received += 1
                     try:
@@ -26,6 +27,12 @@ class MAVRecv:
                         bytes_received += len(buf)
                     except TypeError:
                         bytes_received += len(m.data)
+                    try:
+                        if m.id == 0:
+                            #heartbeat was received, send the same message in response
+                            self.conn.write(buf)
+                    except AttributeError:
+                        pass
 
             except KeyboardInterrupt:
                 break

@@ -50,11 +50,18 @@
         <h2>Status</h2>
         
         <div class="row">
-            <div class="col-md-4"><strong>MAVLink packets received</strong></div>
+            <div class="col-md-4"><strong>MAVLink packet counters</strong></div>
 
             <div class="col-md-6">
-                <strong>Serial:</strong> {uart_pkts_rcvd}<br/>
-                <strong>Network:</strong> {net_pkts_rcvd}<br/>
+                <strong>Serial received:</strong> {uart_pkts_rcvd}<br/>
+                <strong>Serial sent:</strong> {uart_pkts_sent}<br/><br/>
+
+                <strong>TCP received:</strong> {tcp_pkts_rcvd}<br/>
+                <strong>TCP sent:</strong> {tcp_pkts_sent}<br/>
+                <strong>TCP dropped:</strong> {tcp_pkts_drp} (out of memory)<br/><br/>
+
+                <strong>UDP received:</strong> {udp_pkts_rcvd}<br/>
+                <strong>UDP sent:</strong> {udp_pkts_sent}<br/><br/>
 
                 <strong>Uptime:</strong> {uptime}</div>
         </div>

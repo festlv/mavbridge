@@ -47,6 +47,21 @@ class MavlinkServer {
             return inst;
         }
 
+        /**
+         * Various performance/statistics counters.
+         *
+         */
+        static uint32_t ct_tcp_in;
+        static uint32_t ct_tcp_out;
+        static uint32_t ct_tcp_dropped;
+
+        static uint32_t ct_udp_in;
+        static uint32_t ct_udp_out;
+        static uint32_t ct_udp_dropped;
+
+        static uint32_t ct_uart_in;
+        static uint32_t ct_uart_out;
+
     private:
         MavlinkServer() 
         {
