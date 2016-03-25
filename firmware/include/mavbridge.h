@@ -2,13 +2,14 @@
 #include <stdint.h>
 #include <queue>
 #include <Wiring/WVector.h>
-#include "mavlink/ardupilotmega/mavlink.h"
+#include "mavlink_decoder.h"
 
 #define NET_LED_PIN     12
 #define UART_LED_PIN    13
 
 #define MAX_CLIENTS 5
 #define MAX_INTERFACES 2
+
 
 
 
@@ -31,7 +32,7 @@ class MavlinkServer {
     public:
         static void initialize(uint16_t port, mavlink_proto_type_t protocol);
 
-        static void transmit_packet(mavlink_message_t msg);
+        static void transmit_packet(mavlink_message_t& msg);
         static bool pop_received_packet(mavlink_packet_t* packet);
 
         static void udp_receive_callback(UdpConnection &conn, char* data, int size,
@@ -62,11 +63,11 @@ class MavlinkServer {
         static uint32_t ct_uart_in;
         static uint32_t ct_uart_out;
 
+        static MavlinkDecoder decoder;
     private:
         MavlinkServer() 
         {
         }
-
         static UdpConnection* udp_conn;
         static TcpServer*     tcp_server;
 

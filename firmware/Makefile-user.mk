@@ -28,7 +28,7 @@ MODULES = app
 
 # Com port speed
 COM_SPEED	= 115200
-
+COM_SPEED_ESPTOOL = 115200
 SPIFF_FILES = web/build
 
 HW_VER ?= 2
