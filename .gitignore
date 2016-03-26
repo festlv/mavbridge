@@ -6,3 +6,4 @@ hardware/_autosave*
 *-bak
 *-cache.lib
 .ropeproject
+*.pyc

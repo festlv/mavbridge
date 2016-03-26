@@ -10,7 +10,7 @@
 #define MAX_CLIENTS 5
 #define MAX_INTERFACES 2
 
-
+#define TRANSMIT_BUF_SIZE (MAVLINK_MAX_PACKET_LEN * 4)
 
 
 void mavbridge_init(void);
@@ -33,6 +33,13 @@ class MavlinkServer {
         static void initialize(uint16_t port, mavlink_proto_type_t protocol);
 
         static void transmit_packet(mavlink_message_t& msg);
+        static void transmit_buffer(void);
+        //broadcasts packet on UDP interfaces
+        static void broadcast_packet(mavlink_message_t& msg);
+
+        //queues outgoing packet
+        static void queue_packet(mavlink_message_t& msg);
+
         static bool pop_received_packet(mavlink_packet_t* packet);
 
         static void udp_receive_callback(UdpConnection &conn, char* data, int size,
@@ -78,8 +85,14 @@ class MavlinkServer {
 
         static Vector<mavlink_packet_t> incoming_message_queue;
 
+        static char transmit_buf[TRANSMIT_BUF_SIZE];
+        static uint16_t transmit_buf_size;
+        static uint8_t transmit_buf_packets;
+
         static bool client_exists(IPAddress ip, mavlink_proto_type_t proto);
         static bool interface_exists(IPAddress ip);
 
         static Timer interface_update_timer;
+
+        static Timer transmit_window_timer;
 };
