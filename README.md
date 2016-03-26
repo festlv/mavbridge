@@ -1,22 +1,19 @@
 MAVBridge
 ------------------
 
-MAVBridge is an ESP8266 based serial MAVLink <-> wireless bridge. It is compatible
-with MAVLink v1.0 specification.
+MAVBridge is stand-alone ESP8266 based serial MAVLink <-> wireless bridge. It is compatible
+with MAVLink v1.0 specification and 
 
 Compatibility has been tested with:
 
-* PX4 Pixhawk hardware
+* Pixhawk hardware (PX4 and ArduPilot flight stacks)
 * APMPlanner
 * MissionPlanner
 * DroidTower
 * qGroundcontrol
+* MAVProxy
 
-Serial port side supports up to 921600 baud rate and supports any commonly used
-baud rates (9600, 57600, 115200).
-
-On wifi side, access-point and client modes are supported (even
-simultaneously).
+Device has built-in web interface for configuration and status.
 
 At the moment, only UDP transport layer is supported. TCP support is
 work-in-progress (functionality is there, but ESP runs out of RAM and crashes
@@ -24,7 +21,8 @@ when transmitting a lot of data).
 
 As for performance- UDP has been successfully tested at 921600 baud rate and
 almost 70 KiB/s data rate without packet-loss (depends on number of WiFi
-networks around you, of course).
+networks around device , of course).
+
 
 Configuration interface
 --------------------------------
