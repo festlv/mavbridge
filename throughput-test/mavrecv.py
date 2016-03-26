@@ -21,12 +21,12 @@ class MAVRecv:
                 m = self.conn.recv_msg()
 
                 if m:
-                    packets_received += 1
                     try:
+                        packets_received += 1
                         buf = m.pack(self.conn.mav)
                         bytes_received += len(buf)
                     except TypeError:
-                        bytes_received += len(m.data)
+                        pass
                     try:
                         if m.id == 0:
                             #heartbeat was received, send the same message in response
