@@ -26,9 +26,18 @@ As for performance- UDP has been successfully tested at 921600 baud rate and
 almost 70 KiB/s data rate without packet-loss (depends on number of WiFi
 networks around you, of course).
 
+Configuration interface
+--------------------------------
 
-Firmware
-------------------
+Index/status page:
+![Screenshot of index page](img/index.png)
+
+Settings:
+![Screenshot of settings page](img/settings.png)
+
+
+Building firmware
+-------------------
 
 Prerequisites for building:
 * https://github.com/pfalcon/esp-open-sdk with Espressif IOT SDK 1.5.2
@@ -51,4 +60,4 @@ Testing
 --------------
 
 Python scripts that automatically test performance and stability of the
-MAVBridge are available in `throughput-test/`
+MAVBridge are available in `throughput-test/`. Tests require pymavlink.
