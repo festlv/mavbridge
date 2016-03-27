@@ -32,6 +32,7 @@ void onSettings(HttpRequest &request, HttpResponse &response) {
         if (request.getPostParameter("do_update").length() > 0)
         {
             ota_update();
+            vars["message"] = "Trying to update firmware. Please wait 60 seconds and reload this page...";
         } 
 
         if (request.getPostParameter("save_reboot").length() > 0)

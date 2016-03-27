@@ -112,7 +112,8 @@ class SendProcess(multiprocessing.Process):
             bytes_in = self.conn.port.inWaiting()
 
             if bytes_in > 0:
-                print(self.conn.port.read(bytes_in))
+                read_data = self.conn.port.read(bytes_in)
+                # print(read_data)
 
             loop_start = time.time()
             bytes_to_send = self.datarate

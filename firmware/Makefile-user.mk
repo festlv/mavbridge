@@ -32,7 +32,7 @@ COM_SPEED_ESPTOOL = 115200
 SPIFF_FILES = web/build
 
 HW_VER ?= 2
-SW_VER ?= 2
+SW_VER ?= 3
 
 FW_UPDATE_LINK := "http://imprimus.lv/mavbridge/hw-$(HW_VER)/latest/"
 
