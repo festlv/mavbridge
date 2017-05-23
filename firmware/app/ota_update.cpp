@@ -6,7 +6,8 @@
 
 rBootHttpUpdate* otaUpdater = 0;
 
-void ota_update_callback(bool result) {
+void ota_update_callback(rBootHttpUpdate& updater, bool result) {
+    (void)updater;
     if (result == true) {
         // success
         uint8 slot;

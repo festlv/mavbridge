@@ -16,6 +16,11 @@ void check_network_buffer();
 Timer uart_recv_timer, net_recv_timer;
 
 
+//Sming has this removed in recent versions
+#ifndef RX_BUFF_SIZE
+#define RX_BUFF_SIZE 256
+#endif
+
 // Will be called when WiFi hardware and software initialization was finished
 // And system initialization was completed
 void ready()
